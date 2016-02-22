@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>Title</key>
+	<string>RootPList</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Photo Quality</string>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>DefaultValue</key>
+			<real>0.75</real>
+			<key>Key</key>
+			<string>image_quality</string>
+			<key>Titles</key>
+			<array>
+				<string>OK</string>
+				<string>Better</string>
+				<string>Best</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>0.5</string>
+				<string>0.75</string>
+				<string>0.9</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

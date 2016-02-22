@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'MyAssets' target in the 'MyAssets' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif

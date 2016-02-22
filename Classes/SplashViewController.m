@@ -1,0 +1,81 @@
+//
+//  SplashViewController.m
+//  Splash
+//  Copyright __MyCompanyName__ 2009. All rights reserved.
+//
+
+#import "SplashViewController.h"
+
+@implementation SplashViewController
+
+- (void)loadView {
+	UIView *contentView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+	
+	// setup our content view so that it auto-rotates along with the UViewController
+	contentView.autoresizesSubviews = YES;
+	contentView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+
+	UIView *cView = [[[NSBundle mainBundle] loadNibNamed:@"SplashViewController" owner:self options:nil] lastObject ];
+	[contentView addSubview:cView];
+
+	modelView = (UIImageView *)[cView viewWithTag:10];
+	UILabel *ver=(UILabel *)[cView viewWithTag:1];
+	NSString *appVers = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+	ver.text= [NSString stringWithFormat:@"MyAssets %@",appVers];
+
+	// add it as the parent/content view to this UIViewController
+	self.view = contentView;
+	[contentView release];
+}
+
+
+
+/*
+ // The designated initializer. Override to perform setup that is required before the view is loaded.
+ - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+ if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+ // Custom initialization
+ }
+ return self;
+ }
+ */
+
+/*
+ // Implement loadView to create a view hierarchy programmatically, without using a nib.
+ */
+
+
+/*
+ // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+ - (void)viewDidLoad {
+ [super viewDidLoad];
+ }
+ */
+
+
+/*
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
+
+- (void)didReceiveMemoryWarning {
+	// Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+	
+	// Release any cached data, images, etc that aren't in use.
+}
+
+- (void)viewDidUnload {
+	// Release any retained subviews of the main view.
+	// e.g. self.myOutlet = nil;
+}
+
+
+- (void)dealloc {
+    [super dealloc];
+}
+
+@end
